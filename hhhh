@@ -1,0 +1,538 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      backgroundColor: Colors.black, // Set background color to black
+
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween, // Distributes space between containers
+          children: [
+            // First Container (Lock icon, username, and expand arrow)
+            Container(
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.lock_outline, // Lock icon before the title
+                    color: Colors.white, // Set icon color to white
+                    size: 18, // Adjust the icon size
+                  ),
+                  SizedBox(width: 5), // Add space between the icon and the text
+                  Text(
+                    'maryamh.sami',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(width: 0), // Adjust space before the expand icon if needed
+                  Icon(
+                    Icons.expand_more, // Arrow icon
+                    color: Colors.white, // Set icon color to white
+                    size: 20, // Adjust the icon size
+                  ),
+                ],
+              ),
+            ),
+            // Second Container (Two additional icons)
+            Container(
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.add_box_outlined, // Notification icon
+                    color: Colors.white, // Set icon color to white
+                    size: 20, // Adjust the icon size
+                  ),
+                  SizedBox(width: 15), // Space between the two icons
+                  Icon(
+                    Icons.menu, // Message icon
+                    color: Colors.white, // Set icon color to white
+                    size: 20, // Adjust the icon size
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        backgroundColor: Colors.black, // Ensure app bar matches background
+      ),
+      body: SafeArea(
+          child: Padding(padding: EdgeInsets.only(left: 0, right: 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0), // Adjust the padding as needed
+                      child: Stack(
+                        alignment: Alignment.bottomRight,
+                        children: [
+                          // Main CircleAvatar with profile image
+                          CircleAvatar(
+                            radius: 45,
+                            backgroundImage: AssetImage('assets/IMG_8892.PNG'),
+                          ),
+                          // Container to create a circular border around the blue circle
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.black, width: 4), // Black border
+                            ),
+                            child: CircleAvatar(
+                              radius: 12,
+                              backgroundColor: Colors.blue,
+                            ),
+                          ),
+                          Positioned(
+                            top: 65,
+                            left: 64,
+                            child: Icon(
+                              Icons.add, // Add icon
+                              color: Colors.white, // Icon color
+                              size: 20, // Icon size
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.black,
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            "2",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 14,color: Colors.white),
+                          ),
+                          Text(
+                            "posts",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.black,
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            "148",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 14,color: Colors.white),
+                          ),
+                          Text(
+                            "followers",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.black,
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            "434",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 14,color: Colors.white),
+                          ),
+                          Text(
+                            "following",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  // Horizontal padding for username
+                  child: Text('Maryam', style: TextStyle(
+                      fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  // Horizontal padding for bio
+                  child: Text('IV Engineering Student',
+                    style: TextStyle(fontSize: 13, color: Colors.white),
+                  ),
+                ),
+                SizedBox(height: 10), // Space between bio and row
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround, // Ensure even spacing between the containers
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Color(0xFF1C1C1C), // Darker shade of grey
+                      ),
+                      child: Text(
+                        "               Edit profile               ",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 13,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Color(0xFF1C1C1C),
+                      ),
+                      child: Text(
+                        "              Share profile              ",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 13,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Color(0xFF1C1C1C), // Darker shade of grey
+                      ),
+                      child: Icon(
+                        Icons.person_add_outlined,
+                        color: Colors.white, // Set icon color to white
+                        size: 18, // Adjust the icon size
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 13), //space between row and stories
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start, // Ensure even spacing between the containers
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Stack(
+                            alignment: Alignment.center, // Aligns everything in the center
+                            children: [
+                              // Outer Circle Avatar (serving as a border or background)
+                              CircleAvatar(
+                                radius: 34, // Outer circle radius
+                                backgroundColor: Colors.grey, // Outer avatar color
+                              ),
+                              // Inner Circle Avatar
+                              CircleAvatar(
+                                radius: 32.5, // Inner circle radius
+                                backgroundColor: Colors.black,
+                              ),
+                              CircleAvatar(
+                                radius: 28.4, // Inner circle radius
+                                backgroundColor: Colors.white,
+                              ),
+                              CircleAvatar(
+                                radius: 28, // Inner circle radius
+                                backgroundImage: AssetImage('assets/IMG_8891.PNG'),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 3), // Space between avatar and text
+                          Text(
+                            "Random",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Stack(
+                            alignment: Alignment.center, // Aligns everything in the center
+                            children: [
+                              // Outer Circle Avatar (serving as a border or background)
+                              CircleAvatar(
+                                radius: 34, // Outer circle radius
+                                backgroundColor: Colors.grey, // Outer avatar color
+                              ),
+                              // Inner Circle Avatar
+                              CircleAvatar(
+                                radius: 32.5, // Inner circle radius
+                                backgroundColor: Colors.black,
+                              ),
+                              CircleAvatar(
+                                radius: 28.4, // Inner circle radius
+                                backgroundColor: Colors.white,
+                              ),
+                              CircleAvatar(
+                                radius: 28, // Inner circle radius
+                                backgroundColor: Colors.black,
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 3), // Space between avatar and text
+                          Text(
+                            "IV",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Stack(
+                            alignment: Alignment.center, // Aligns everything in the center
+                            children: [
+                              // Outer Circle Avatar (serving as a border or background)
+                              CircleAvatar(
+                                radius: 33, // Outer circle radius
+                                backgroundColor: Colors.grey[850], // Outer avatar color
+                              ),
+                              // Inner Circle Avatar
+                              CircleAvatar(
+                                radius: 31, // Inner circle radius
+                                backgroundColor: Colors.black,
+                              ),
+                              // Icon inside the inner circle
+                              Positioned(
+                                child: Icon(
+                                  Icons.add, // Add icon
+                                  color: Colors.white, // Icon color
+                                  size: 24, // Icon size
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 3), // Space between avatar and text
+                          Text(
+                            "New",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+
+                SizedBox(height: 7), //space stories and ***ICONS***
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.black,
+                      ),
+                      child: Icon(
+                        Icons.grid_on,
+                        color: Colors.white, // Set icon color to white
+                        size: 20, // Adjust the icon size
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.black,
+                      ),
+                      child: Icon(
+                        Icons.video_library,
+                        color: Colors.white, // Set icon color to white
+                        size: 20, // Adjust the icon size
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.black,
+                      ),
+                      child: Icon(
+                        Icons.account_box_outlined,
+                        color: Colors.white, // Set icon color to white
+                        size: 20, // Adjust the icon size
+                      ),
+                    ),
+                  ],
+                ),
+
+
+                SizedBox(height: 6), //space stories and ***POSTS***
+
+
+                Row(
+                  children: [
+                    Container(
+                      width: 137, // Set a width for the container
+                      height: 4, // Set a height for the container to make the border visible
+                      decoration: BoxDecoration(
+                        border: Border(
+                          top: BorderSide(color: Colors.white, width: 2), // Thin white line at the top
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                Expanded(
+                  child: GridView.count(
+                    padding: EdgeInsets.zero, // Ensure there's no padding from the start
+                    crossAxisCount: 3, // 3 posts per row
+                    children: [
+                      // First post with white line on top
+
+                        Container(
+                          height: 200,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/IMG_8894.PNG'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      // Second post
+                      Container(
+                        height: 200,
+                        width: 200,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/IMG_8893.PNG'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+
+                      // Third post (add more posts as needed)
+                      Container(
+                        height: 200,
+                        width: 200,
+                        color: Colors.black, // Placeholder for third post
+                      ),
+                    ],
+                  ),
+                ),
+
+                Row(
+                  children: [
+                    Container(
+                      width: 411, // Set a width for the container
+                      height: 4, // Set a height for the container to make the border visible
+                      decoration: BoxDecoration(
+                        border: Border(
+                          top: BorderSide(color: Colors.white, width: 0.3), // Thin white line at the top
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround, // Ensure even spacing between the containers
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 5), // Increased vertical padding
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.black, // Darker shade of grey
+                      ),
+                      child: Icon(
+                        Icons.home_outlined,
+                        color: Colors.white, // Set icon color to white
+                        size: 20, // Adjust the icon size
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 5), // Increased vertical padding
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.black, // Darker shade of grey
+                      ),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.white, // Set icon color to white
+                        size: 20, // Adjust the icon size
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 5), // Increased vertical padding
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.black, // Darker shade of grey
+                      ),
+                      child: Icon(
+                        Icons.add_box_outlined,
+                        color: Colors.white, // Set icon color to white
+                        size: 20, // Adjust the icon size
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 5), // Increased vertical padding
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.black, // Darker shade of grey
+                      ),
+                      child: Icon(
+                        Icons.video_library_outlined,
+                        color: Colors.white, // Set icon color to white
+                        size: 20, // Adjust the icon size
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 5), // Increased vertical padding
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.black, // Darker shade of grey
+                      ),
+                      child: Icon(
+                        Icons.person_outlined,
+                        color: Colors.white, // Set icon color to white
+                        size: 20, // Adjust the icon size
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+      ),
+  ),
+  )
+  ); //runApp
+}
