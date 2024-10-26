@@ -1,0 +1,386 @@
+import 'package:flutter/material.dart';
+
+/*void main() {
+  runApp(MatrialApp(
+    home: Scaffold(
+
+      appBar: AppBar(
+        title: row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+          Children: [
+            //the left right arrow icon
+            Container(child:Icon(
+              Icons.lock_outline, // Lock icon before the title
+              color: Colors.white, // Set icon color to white
+              size: 18, // Adjust the icon size
+            ),
+
+
+            SizedBox(width: 5,),),
+
+container(
+            Text(
+              'Profile',
+              style: TextStyle(color: Colors.white),),
+      ),
+        container(
+        Icon(
+          Icons.expand_more, // Arrow icon
+          color: Colors.white, // Set icon color to white
+          size: 20, // Adjust the icon size
+        ),
+
+            ),),
+
+
+
+
+
+          ],
+        ),
+      ),
+    ),
+  ),
+}
+
+*/
+void main() {
+  runApp(MaterialApp(
+      home: Scaffold(
+      // Set background color to black
+
+      appBar: AppBar(
+      title: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround, // Distributes space between containers
+      children: [
+
+
+
+//first row (icon,profile,icon)
+      Container(
+      child: Row(
+      children: [
+      Icon(
+      Icons.arrow_back, // Lock icon before the title
+      color: Colors.black, // Set icon color to white
+      size: 22, // Adjust the icon size
+  ),
+  SizedBox(width: 120), // Add space between the icon and the text
+  Text(
+  'Profile',
+  style: TextStyle(color: Colors.black, fontSize: 22,),
+  ),
+  SizedBox(width: 120), // Adjust space before the expand icon if needed
+  Icon(
+  Icons.settings, // Arrow icon
+  color: Colors.black, // Set icon color to white
+  size: 22, // Adjust the icon size
+  ),
+  ],
+  ),
+  ),
+
+
+        //the circle avatar
+
+
+
+
+
+
+
+  ],
+  ),
+  backgroundColor: Colors.white, // Ensure app bar matches background
+  ),
+
+
+
+        body: SafeArea(
+          child: Padding(padding: EdgeInsets.only(left: 15, right: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+
+
+                //container for circle avatar and it's text
+
+                Container(
+                  padding: EdgeInsets.all(15),
+                  child: Row(
+                    children: [
+                    CircleAvatar(
+                      radius: 45,
+                      backgroundColor: Colors.black,
+                    ),
+                      SizedBox(width: 20),
+
+                      Column(crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                      Text(
+                        'Sandra Glam',
+                        style: TextStyle(color: Colors.black, fontSize: 20, ),
+                      ),
+                      Text(
+                        'Denmark, Copenhogen',
+                        style: TextStyle(color: Colors.black),
+                      ),
+]
+        ),
+                     ],
+                  ),
+                ),
+
+
+
+
+
+                //row for the (follow, followers, icons
+
+
+
+/*i only used chatGPT in this part because i was confused about how to wrap two containers with one row
+  without errors*/
+
+                Row( //row under avatar
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [ //children of the row
+                    //left stuff
+                    Container(
+                      padding: EdgeInsets.all(8),
+                      child: Row( //row to hold two columns
+                        children: [ //children of row
+                          Column(
+                            children: [
+                              Text(
+                                'follow',
+                                style: TextStyle(color: Colors.black, fontSize: 20),
+                              ),
+                              Text(
+                                '72',
+                                style: TextStyle(color: Colors.black, fontSize: 22),
+                              ),
+                            ],
+                          ),
+
+                          SizedBox(width: 30),
+
+                          Column(
+                            children: [
+                              Text(
+                                'followers',
+                                style: TextStyle(color: Colors.black, fontSize: 20),
+                              ),
+                              Text(
+                                '162',
+                                style: TextStyle(color: Colors.black, fontSize: 22),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //right  container
+                    Container(
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.square_outlined, // Lock icon before the title
+                            color: Colors.black, // Set icon color to white
+                            size: 22, // Adjust the icon size
+                          ),
+
+                          Icon(
+                            Icons.edit, // Lock icon before the title
+                            color: Colors.black, // Set icon color to white
+                            size: 22, // Adjust the icon size
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+
+
+                 Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   children: [
+                     Container(
+                       padding: EdgeInsets.all(20), //padding to control the size of the box
+                       decoration: BoxDecoration(
+                         color: Colors.green, borderRadius: BorderRadius.circular(8),),
+                       child: Row(
+                         children: [
+                           Column(
+                             children: [
+                               Text(
+                                 'Start Weight',
+                                 style: TextStyle(color: Colors.black, fontSize: 16),
+                               ),
+                               Text(
+                                 '53.3KG',
+                                 style: TextStyle(color: Colors.black, fontSize: 14),
+                               )
+                             ],
+                           ),
+                         ],
+                       ),
+                     ),
+                     Container(
+                       padding: EdgeInsets.all(20), //padding to control the size of the box
+                       decoration: BoxDecoration(
+                         color: Colors.blue, borderRadius: BorderRadius.circular(8),),
+                       child: Row(
+                         children: [
+                           Column(
+                             children: [
+                               Text(
+                                 'Goal',
+                                 style: TextStyle(color: Colors.black, fontSize: 16),
+                               ),
+                               Text(
+                                 '50.0kg',
+                                 style: TextStyle(color: Colors.black, fontSize: 14),
+                               )
+                             ],
+                           ),
+                         ],
+                       ),
+                     ),
+                     Container(
+                       padding: EdgeInsets.all(20), //padding to control the size of the box
+                       decoration: BoxDecoration(
+                         color: Colors.yellow, borderRadius: BorderRadius.circular(8),),
+                       child: Row(
+                         children: [
+                           Column(
+                             children: [
+                               Text(
+                                 'Daily colories',
+                                 style: TextStyle(color: Colors.black, fontSize: 16),
+                               ),
+                               Text(
+                                 '740 kcal',
+                                 style: TextStyle(color: Colors.black, fontSize: 14),
+                               ),
+                             ],
+                           ),
+                         ],
+                       ),
+                     ),
+
+                   ],
+                 ),
+
+                SizedBox(height: 20),
+
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(20), //padding to control the size of the box
+                      decoration: BoxDecoration(
+                        color: Colors.grey, borderRadius: BorderRadius.circular(8),),
+                      child: Row(
+                        children: [
+                          Container(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Physical Activity',
+                                  style: TextStyle(color: Colors.black, fontSize: 16),
+                                ),
+
+                                Text(
+                                  '2 Days ago',
+                                  style: TextStyle(color: Colors.black, fontSize: 14),
+                                ),
+                              ]
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(height: 20),
+
+                    Container(
+                      padding: EdgeInsets.all(20), //padding to control the size of the box
+                      decoration: BoxDecoration(
+                        color: Colors.grey, borderRadius: BorderRadius.circular(8),),
+                      child: Row(
+                        children: [
+                          Container(
+                            child: Column(
+                                children: [
+                                  Text(
+                                    'Statistics',
+                                    style: TextStyle(color: Colors.black, fontSize: 16),
+                                  ),
+
+                                  Text(
+                                    'This year: 109 kilometers',
+                                    style: TextStyle(color: Colors.black, fontSize: 14),
+                                  ),
+                                ]
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(height: 20),
+
+                    Container(
+                      padding: EdgeInsets.all(20), //padding to control the size of the box
+                      decoration: BoxDecoration(
+                        color: Colors.grey, borderRadius: BorderRadius.circular(8),),
+                      child: Row(
+                        children: [
+                          Container(
+                            child: Column(
+                                children: [
+                                  Text(
+                                    'Routers',
+                                    style: TextStyle(color: Colors.black, fontSize: 16),
+                                  ),
+
+                                  Text(
+                                    '7',
+                                    style: TextStyle(color: Colors.black, fontSize: 14),
+                                  ),
+                                ]
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+
+
+
+
+
+
+
+
+
+        ],
+        ),
+      ),
+        ),
+
+
+
+
+
+
+
+
+
+      ),
+      ),
+  );
+  }
